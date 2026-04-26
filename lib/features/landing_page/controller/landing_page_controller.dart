@@ -59,7 +59,8 @@ class LandingPageController extends GetxController {
       accent: Color(0xFFEA580C),
     ),
     ThesisItem(
-      title: 'Lightweight Intrusion Detection for Academic Networks',
+      title:
+          'Lightweight Intrusion Detection for Academic Networks in Low-Resource Environments',
       researcher: 'Shahriar Kabir',
       supervisor: 'Dr. Tanjina Akter',
       category: 'Cybersecurity',
@@ -100,10 +101,12 @@ class LandingPageController extends GetxController {
     final query = searchQuery.value.trim().toLowerCase();
 
     return theses.where((thesis) {
-      final matchesCategory = selectedCategory.value == 'All' ||
+      final matchesCategory =
+          selectedCategory.value == 'All' ||
           thesis.category == selectedCategory.value;
 
-      final matchesQuery = query.isEmpty ||
+      final matchesQuery =
+          query.isEmpty ||
           thesis.title.toLowerCase().contains(query) ||
           thesis.researcher.toLowerCase().contains(query) ||
           thesis.category.toLowerCase().contains(query) ||
@@ -143,10 +146,7 @@ class LandingPageController extends GetxController {
 }
 
 class ThesisCategory {
-  const ThesisCategory({
-    required this.name,
-    required this.count,
-  });
+  const ThesisCategory({required this.name, required this.count});
 
   final String name;
   final int count;
